@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+}
+#gameWindow {
+    border: 1px black solid;
+    /* width: 450px; */
+    /* height: 450px; */
+    /* padding: 10vh 10vw; */
+
+}
+
+.center {
+    margin: 5vh 5vw
+}
