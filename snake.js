@@ -1,4 +1,4 @@
-export default class Game {
+class Game {
     constructor(gameWidth, gameHeight, cellSize) {
         this.gameWidth = gameWidth
         this.gameHeight = gameHeight
@@ -127,7 +127,7 @@ class Snake {
 
 }
 
-export default class Apple {
+class Apple {
     constructor(game) {
         this.screenWidth = game.screenWidth;
         this.screenHeight = game.screenHeight;
