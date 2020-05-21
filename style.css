@@ -1,14 +1,46 @@
 * {
     margin: 0;
 }
+
 #gameWindow {
     border: 1px black solid;
-    /* width: 450px; */
-    /* height: 450px; */
+    /* width: 650px;
+    height: 650px; */
     /* padding: 10vh 10vw; */
 
 }
 
-.center {
-    margin: 5vh 5vw
+
+#gameWrapper {
+    margin: 5vh 5vw;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+/* #died-popup {
+    text-align: center;
+} */
+
+#died {
+    /* display: inline-block; */
+    visibility: hidden;
+}
+#tooGood {
+    visibility: hidden;
+}
+#startGame {
+    visibility: hidden;
+}
+.btn {
+    z-index: 100;
+    position: absolute;
+    background-color: aliceblue;
+    width: 150px;
+    height: 60px;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    margin-left: -115px;
+    margin-top: -70px;
 }

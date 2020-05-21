@@ -10,9 +10,24 @@
 </head>
 
 <body>
-    <div class='center'>
+    <div class='center' id='gameWrapper'>
         <canvas id='gameWindow' width='650px' height='650px'></canvas>
+
+        <div class='btn' id="died">
+            <p>You Died</p>
+            <button id='restartDeath'>Play Again?</button>
+        </div>
+        <div class='btn' id="tooGood">
+            <p>You Died</p>
+            <button id='restartGood'>Play Again?</button>
+        </div>
+        <div class='btn' id="startGame">
+            <p>This is Snake</p>
+            <button id='start'>Start Game</button>
+        </div>
+
     </div>
+
     <script src="/src/index.js" type="module"></script>
 </body>
 

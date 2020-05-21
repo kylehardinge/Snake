@@ -18,6 +18,8 @@ game.start()
 
 var lastTime = 0;
 
+document.getElementById('startGame').style.visibility = 'visible';
+
 function gameLoop(timestamp) {
 
     setTimeout(function () {
