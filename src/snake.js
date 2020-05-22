@@ -30,7 +30,11 @@ export default class Snake {
         //     }
         // });
         // this.snakeSections.forEach(object => console.log(object));
+        // Math.floor((this.screenHeight / this.cellSize) * (this.screenWidth / this.cellSize) - 1)
         const game = this.game
+        if (this.snakeSections.length === (3)) {
+            this.game.endGameTooGood();
+        }
         this.collisionDetection();
         if (this.addSection === true) {
             this.snakeSections.push(JSON.parse(JSON.stringify(this.snakeSections[this.snakeSections.length - 1])));

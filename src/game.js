@@ -13,7 +13,8 @@ export default class Game {
         this.gameStartedFirstTime = false;
         this.startBtn = document.getElementById('start');
         this.diedBtn = document.getElementById('restartDeath');
-        this.tooGoodBtn = document.getElementById('restartGood')
+        this.tooGoodBtn = document.getElementById('restartGood');
+
     }
 
     start() {
@@ -21,9 +22,10 @@ export default class Game {
         this.snake = new Snake(this);
         this.apple = new Apple(this);
         this.InputHandler = new InputHandler(this.snake, this);
+        this.gameEnded = false;
         if (this.gameStartedFirstTime === false) {
             this.startBtn.addEventListener('click', function () {
-                document.getElementById('startGame').style.visibility = 'hidden'
+                document.getElementById('startGame').style.visibility = 'hidden';
                 this.gameStartedFirstTime = true;
             }, {
                 once: true
@@ -43,29 +45,44 @@ export default class Game {
         if (this.gameEnded === false && this.gameStarted === true) {
             if (this.InputHandler.queue.length > 0) {
                 this.snake.move(this.InputHandler.queue[0]);
-                this.InputHandler.queue.shift()
+                this.InputHandler.queue.shift();
             }
             this.gameObjects.forEach(object => object.update(deltaTime));
         };
     }
 
     draw(ctx) {
-        this.gameObjects.forEach(object => object.draw(ctx))
-        this.snake.checkApple()
+        this.gameObjects.forEach(object => object.draw(ctx));
+        this.snake.checkApple();
     }
     // startGame() {
     //     this.gameStarted = true;
     //     this.startBtn.removeEventListener('keydown', this.startGame())
     // }
     endGame() {
+        document.getElementById('died').style.visibility = 'visible';
+        document.getElementById('diedText').innerHTML = 'You Died. <br> Your final length was '+this.snake.snakeSections.length
         this.gameEnded = true;
         this.gameStarted = false;
-        document.getElementById('died').style.visibility = 'visible';
-        this.diedBtn.addEventListener('click', function(){
+        var self = this
+        this.diedBtn.addEventListener('click', function() {
             document.getElementById('died').style.visibility = 'hidden';
-            this.background, this.snake, this.apple, this.InputHandler = null;
-            this.start();
-            
-        }, {once: true});
+            self.start();
+        });
+        
+        
+    }
+    endGameTooGood() {
+        document.getElementById('tooGood').style.visibility = 'visible';
+        document.getElementById('goodText').innerHTML = 'Your final length was '+this.snake.snakeSections.length
+        this.gameEnded = true;
+        this.gameStarted = false;
+        var self = this
+        this.tooGoodBtn.addEventListener('click', function() {
+            document.getElementById('tooGood').style.visibility = 'hidden';
+            self.start();
+        });
+        
+        
     }
 }

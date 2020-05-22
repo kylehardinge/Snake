@@ -13,8 +13,8 @@ var cellSize = 24;
 var speed = 7;
 
 
-var game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT, cellSize)
-game.start()
+var game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT, cellSize);
+game.start();
 
 var lastTime = 0;
 
@@ -24,7 +24,7 @@ function gameLoop(timestamp) {
 
     setTimeout(function () {
         let deltaTime = timestamp - lastTime;
-        lastTime = timestamp
+        lastTime = timestamp;
         ctx.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         game.update(deltaTime);
         game.draw(ctx);
