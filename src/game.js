@@ -1,7 +1,7 @@
-import Apple from '/Snake/src/apple.js';
-import Snake from '/Snake/src/snake.js';
-import InputHandler from '/Snake/src/input.js';
-import Background from '/Snake/src/background.js';
+import Apple from '/src/apple.js';
+import Snake from '/src/snake.js';
+import InputHandler from '/src/input.js';
+import Background from '/src/background.js';
 
 export default class Game {
     constructor(screenWidth, screenHeight, cellSize) {
