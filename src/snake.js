@@ -32,7 +32,7 @@ export default class Snake {
         // this.snakeSections.forEach(object => console.log(object));
         // Math.floor((this.screenHeight / this.cellSize) * (this.screenWidth / this.cellSize) - 1)
         const game = this.game
-        if (this.snakeSections.length === (3)) {
+        if (this.snakeSections.length === (Math.floor((this.screenHeight / this.cellSize) * (this.screenWidth / this.cellSize) - 1))) {
             this.game.endGameTooGood();
         }
         this.collisionDetection();
