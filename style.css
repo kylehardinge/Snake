@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+body {
+    color: white;
+    background-color: #3e434a;
+}
+
 #gameWindow {
     border: 1px black solid;
     /* width: 650px;
