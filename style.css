@@ -40,7 +40,7 @@ body {
 .btn {
     z-index: 100;
     position: absolute;
-    background-color: aliceblue;
+    background-color: inherit;
     width: 150px;
     height: 60px;
     padding: 40px;
