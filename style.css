@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+body {
+    color: white;
+    background-color: #3e434a;
+}
+
 #gameWindow {
     border: 1px black solid;
     /* width: 650px;
@@ -35,7 +40,7 @@
 .btn {
     z-index: 100;
     position: absolute;
-    background-color: aliceblue;
+    background-color: inherit;
     width: 150px;
     height: 60px;
     padding: 40px;
