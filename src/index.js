@@ -1,4 +1,4 @@
-import Game from '/snake/src/game.js';
+import Game from 'src/game.js';
 
 
 let canvas = document.getElementById('gameWindow');
